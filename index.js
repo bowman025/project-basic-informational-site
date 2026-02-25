@@ -1,4 +1,4 @@
-import http from 'http';
+/* import http from 'http';
 import fs from 'fs/promises';
 import url from 'url';
 import path from 'path';
@@ -36,5 +36,36 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+}); */
+
+
+// Rewrite with Express
+
+import express from 'express';
+import path from 'path';
+
+const PORT = 8080;
+
+const app = express();
+const publicPath = path.join(import.meta.dirname, 'public');
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
+
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(publicPath, 'about.html'));
+});
+
+app.get('/contact-me', (req, res) => {
+  res.sendFile(path.join(publicPath, 'contact-me.html'));
+});
+
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(publicPath, '404.html'));
+});
+
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

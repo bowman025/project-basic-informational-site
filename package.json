@@ -1,0 +1,24 @@
+{
+  "name": "project-basic-informational-site",
+  "version": "1.0.0",
+  "description": "Very basic informational site practice in line with The Odin Project's NodeJS Course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bowman025/project-basic-informational-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/bowman025/project-basic-informational-site/issues"
+  },
+  "homepage": "https://github.com/bowman025/project-basic-informational-site#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
